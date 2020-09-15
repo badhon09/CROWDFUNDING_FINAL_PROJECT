@@ -1,0 +1,164 @@
+
+/*Login Page CSS*/
+
+@import "bourbon";
+
+body {
+	background: #eee !important;	
+}
+
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 440px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+}
+
+ 
+
+	.form-control {
+	  
+	  font-size: 16px;
+	 
+	 padding: 10px;
+	 margin-bottom: 20px;
+	
+    }
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+
+	/*Home Dashboard*/
+	nav{
+		display:flex;
+		justify-content: space-between; 
+		align-items: center;
+		height: 60px;
+		background-color: #FFFFFF;
+		box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+		padding: 0px 5%;
+		
+		
+	}
+	nav ul{
+		display: flex;
+	}
+	nav ul li{
+		list-style: none;
+
+	}
+	nav ul li a{
+		margin:25px;
+		font-family: myriad pro regular;
+		color:#505050;
+		font-size:15px;
+		font-weight: 700;
+		
+		
+	}
+
+	.postarea{
+		margin-left: 60px;
+		margin-right: 60px;
+		
+		
+
+	}
+	.postcards{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		
+	}
+
+
+	.card {
+		
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+		transition: 0.3s;
+		border: 1px solid;
+		width: 300px;
+		justify-content: center;
+		align-items: center;
+		height: 350px;
+		margin: 30px;
+	  }
+	  
+	 
+	  .card:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	  }
+	  
+	  
+	 .container {
+		padding: 2px 16px;
+	  }
+
+	  .postdescription{
+		  display: flex;
+	  }
+	  .cardpost{
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+		transition: 0.3s;
+		border: 1px solid;
+		width: 800px;
+		justify-content: center;
+		align-items: center;
+		height: 600px;
+		margin: 30px;
+		padding-left: 30px;
+		padding-right: 30px;
+
+	  }
+.carddonate{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+		transition: 0.3s;
+		border: 1px solid;
+		width: 300px;
+		justify-content: center;
+		align-items: center;
+		height: 600px;
+		margin: 30px;
+}
+
+.tb5 {
+	border:2px solid #456879;
+	border-radius:10px;
+	height: 22px;
+	width: 230px;
+}
+.myButton {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
