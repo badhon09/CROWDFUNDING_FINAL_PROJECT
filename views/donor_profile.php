@@ -1,3 +1,18 @@
+<?php
+	session_start();
+	require_once('../php/sessionController.php');	
+	require_once('../services/userService.php');	
+
+  $email=$_SESSION['email'];
+
+
+  $user = getByEmail($email);
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,43 +37,40 @@
         </ul>
         </nav>
     </section>
-
+<h1><?php echo $_SESSION['user_id'] ?></h1>
         <h1 align="center">My Profile</h1>
 
 <center>
-    <section>
+    <section class="profile">
+    <img width="220px"src="../uploads/<?=$user['photo']?>">
       <table class="prof_table">
         <tbody>
           <tr>
             <td>Name:</td>
             <td width="1em"></td>
-            <td>#HAPU04</td>
+            <td><?=$user['fullname']?></td>
           </tr>
           <tr>
             <td>Email:</td>
             <td width="1em"</td>
-            <td>Denise Altidor</td>
+            <td><?=$user['email']?></td>
           </tr>
-          <tr>
-            <td>Gender:</td>
-            <td width="1em"</td>
-            <td>34</td>
-          </tr>
+         
           <tr>
             <td>Adress:</td>
             <td width="1em"</td>
-            <td>3 Children</td>
+            <td><?=$user['address']?></td>
           </tr>
           <tr>
             <td>Contact No:</td>
             <td width="1em"</td>
-            <td>Commerce & Farming</td>
+            <td><?=$user['contact']?></td>
           </tr>
           
         </tbody>
       </table>
     </section><br>
-    <a class="myButton">edit</a>
+    <a class="myButton" href="./donor_editprofile.php">edit</a>
   </center>
 
 
@@ -86,6 +98,9 @@
           </tbody>
         </table>
       </section>
+      <br><br>
+
+      <a class="myButton">Delete My Account</a>
     </center>
   
 

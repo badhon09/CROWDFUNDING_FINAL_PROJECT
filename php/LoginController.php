@@ -1,31 +1,57 @@
 <?php
 	session_start();
 
-	require_once('../service/userService.php');
+	require_once('../services/userService.php');
 
 	if(isset($_POST['submit'])){
 
-		$username = $_POST['username'];
+		$email = $_POST['email'];
 		$password = $_POST['password'];
 
-		if(empty($username) || empty($password)){
-			header('location: ../views/login.php?error=null');
-		}else{
+	
 
 			$user = [
-				'username'=>$username,
+				'email'=>$email,
 				'password'=>$password
 			];
 
 			$status = validate($user);
 
 			if($status){
-				$_SESSION['username'] = $username;
-				header('location: ../views/donor/donor_home.php');
-			}else{
-				header('location: ../views/donor/login.php?error=invalid');
+				$_SESSION['email'] = $email;
+
+				$u = getByEmail($email);
+				$type = $u['type'];
+
+				$_SESSION['type']=$type;
+
+
+
+
+				//$_SESSION['user_id']=$id;
+				//$type=$_SESSION['type'];
+				//$id=$_SESSION['user_id'];
+
+				if($type=="donor"){
+
+				
+	
+				header('location: ../views/donor_home.php');
+
 			}
-		}
+			elseif($type=="raiser"){
+				header('location: ../views/raiser_home.php');
+			}
+
+			elseif($type=="admin"){
+				header('location: ../views/admin_home.php');
+
+			}
+				
+			}else{
+				header('location: ../views/login.php?error=invalid');
+			}
+		
 		
 	}
 ?>

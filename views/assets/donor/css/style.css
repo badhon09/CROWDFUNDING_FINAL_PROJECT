@@ -162,3 +162,10 @@ body {
 	position:relative;
 	top:1px;
 }
+
+.amount-progress{
+    width: 80%;
+margin-left: 11.5%;
+height: 50px;
+background-color: #0091EA;
+}
