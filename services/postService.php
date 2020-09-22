@@ -40,6 +40,15 @@ require_once('../db/db.php');
 
 
 	}
+	function addPostByRaiser($post){
+		$con = dbConnection();
+		$sql = "INSERT INTO  posts VALUES('','{$post['title']}','{$post['description']}','{$post['amount']}', '{$post['photo']}', '{$post['id']}','{$post['name']}','{$post['time']}', '{$post['getamount']}' )";
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
     
 
 
