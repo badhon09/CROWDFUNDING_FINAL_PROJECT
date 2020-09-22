@@ -3,7 +3,7 @@
 	require_once('../db/db.php');
 	//include('../db/db.php');
 	
-	
+	   
 	function getByEmail($email){
 		$con = dbConnection();
 		$sql = "select * from users where email='{$email}'";

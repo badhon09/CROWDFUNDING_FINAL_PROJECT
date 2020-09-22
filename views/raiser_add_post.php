@@ -25,7 +25,7 @@
 		    ?>
 	  	</h3>
 		<div class="row">
-			<form action="../php/raiser_addPostController.php" method="post" class="add-form">
+			<form action="../php/raiser_addPostController.php" method="post" class="add-form" enctype="multipart/form-data">
 				<label>Title</label>
 				<input type="text" name="title">
 				<label>Description</label>
