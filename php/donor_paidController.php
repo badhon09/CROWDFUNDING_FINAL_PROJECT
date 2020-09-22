@@ -117,5 +117,25 @@
 
 	 header('Location:success.php');
 	 */
+
+
+	 $payment=[
+		 'donorid'=> $_SESSION['user_id'],
+		 'raiserid'=>  $post_user_id,
+		 'postid'  =>$_SESSION['post_id'],
+		 'time'    =>  $date ,
+		 'donorname'=> $dname,
+		 'raisername' =>$post_fullname,
+		 'amount'   => $donation
+
+	 ];
+
+	 $status = payment($payment);
+
+	 if($status){
+		header('location: ../views/donor_home.php');
+	}else{
+		echo "failed";
+	}
   
 ?>

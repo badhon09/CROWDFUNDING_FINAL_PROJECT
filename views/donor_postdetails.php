@@ -3,13 +3,22 @@
 	require_once('../php/sessionController.php');	
   require_once('../services/postService.php');	
   require_once('../services/userService.php');
+  require_once('../services/commentService.php');
+  require_once('../php/cookieController.php');
   
-
+  $user = getByEmail($_SESSION['email']);
+  $a    = $user['user_id'];
 
   $posts = getpostByid($_GET['postid']);
   $_SESSION['post_id']=$_GET['postid'];
  // $_SESSION['raiser_id']=$posts['user_id'];
  $user = getByEmail($_SESSION['email']);
+
+
+ 
+
+ $cmnt = getAllComments($_SESSION['post_id']);
+ $mycmnt=getCommentById($a,$_SESSION['post_id']);
 
   
 
@@ -34,9 +43,9 @@
         <nav>
         <a href="#" class="logo">Crowd Funding</a>
         <ul>
-            <li><a href="#" class="active">Home </a></li>
-            <li><a href="#">profile</a></li>
-           <li><a href="#">Logout</a></li>
+            <li><a href="./donor_home.php" >Home </a></li>
+            <li><a href="./donor_profile.php">profile</a></li>
+           <li><a href="../php/logoutController.php">Logout</a></li>
         </ul>
         </nav>
     </section>
@@ -58,7 +67,7 @@
         <hr>
         Add Comment:
         <form action="../php/commentController.php" method="post">
-        <input type="text" name="comment" >
+        <input type="text" name="comment" required>
         <input type="hidden" name="pid" value="<?php echo $_GET['postid'] ?>">
         <input type="hidden" name="uid" value="<?php echo $user['user_id'] ?>">
         <input type="hidden" name="name" value="<?php echo $user['fullname'] ?>">
@@ -67,12 +76,32 @@
 
         </form>
         <br>
+
+        My Comments:
+        <?php for($i=0; $i != count($mycmnt); $i++ ){ ?>
+
+<p><b>Name: <?= $mycmnt[$i]['name'] ?></b></p>
+<p> <?= $mycmnt[$i]['comment'] ?></p>
+<a href="../php/commentController.php?cid=<?= $mycmnt[$i]['comment_id']?>">Delete</a>
+<hr>
+
+
+
+<?php } ?>
+
         <hr>
 
 
         Recent Comments:
+        <?php for($i=0; $i != count($cmnt); $i++ ){ ?>
 
-        <p><b>Badhon</b></p>
+        <p><b>Name: <?= $cmnt[$i]['name'] ?></b></p>
+        <p> <?= $cmnt[$i]['comment'] ?></p>
+        <hr>
+
+
+
+        <?php } ?>
 
       </div>
 

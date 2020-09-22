@@ -1,7 +1,8 @@
 <?php
-	session_start();
+
 	require_once('../php/sessionController.php');	
-	require_once('../services/userService.php');	
+  require_once('../services/userService.php');	
+  require_once('../php/cookieController.php');
 
   $email=$_SESSION['email'];
 
@@ -25,18 +26,18 @@
     
       </head>
     <body>
-<h1><?php echo $a ?></h1>
+
     <section>
         <nav>
         <a href="#" class="logo">Crowd Funding</a>
         <ul>
-            <li><a href="#" class="active">Home </a></li>
-            <li><a href="#">profile</a></li>
-           <li><a href="#">Logout</a></li>
+            <li><a href="./donor_home.php" >Home </a></li>
+            <li><a href="./donor_profile.php">profile</a></li>
+           <li><a href="../php/logoutController.php">Logout</a></li>
         </ul>
         </nav>
     </section>
-<h1><?php echo $_SESSION['user_id'] ?></h1>
+
         <h1 align="center">My Profile</h1>
 
 <center>

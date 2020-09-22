@@ -7,6 +7,7 @@
 
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+		
 
 	
 
@@ -24,6 +25,7 @@
 				$type = $u['type'];
 
 				$_SESSION['type']=$type;
+				
 
 
 
@@ -35,7 +37,7 @@
 				if($type=="donor"){
 
 				
-	
+				setcookie('type', "OK", time()+5, '/');
 				header('location: ../views/donor_home.php');
 
 			}
