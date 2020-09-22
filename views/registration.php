@@ -10,11 +10,7 @@
     <div class="wrapper">
         <center>
         <form onsubmit="return f1()" method="post" class="form-signin" action="../php/SignupController.php" enctype="multipart/form-data">  
-
-          <h2 class="form-signin-heading">Registration</h2>
-          <h5>select profile picture:</h5>
-          <input type="file" class="form-control" name="photo" required=""/> 
-          
+          <h2 class="form-signin-heading">Registration Panel</h2>
           <input type="text" class="form-control" name="fullname" placeholder="Full Name" required="" autofocus="" /><br>
           <h5 id="nameMsg"></h5>
           <input type="text" class="form-control" name="email" placeholder="Email" required=""/>   
@@ -25,23 +21,19 @@
           <h6></h6>
           <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
           <h6 id="passMsg"></h6>
-          <div class="custom-select" style="width:200px; height: 20px;">
-            Type:
-            <select name="type">
+          <button style="display:block;width:231px; height:30px; margin-bottom: 20px; font-size: 16px; border: 1px solid; background: transparent;" onclick="document.getElementById('getFile').click()">Select Profile picture</button>
+          <input type='file' class="form-control" name="photo" required="" id="getFile" style="display:none">
+          <div class="custom-select">
+            <select name="type" class="form-control" style="width:231px;font-size: 16px; height:41px;">
               <option name="type" value="raiser">Fund Raiser</option>
               <option name="type" value="donor">Fund Donor</option>
               <option name="type" value="admin">Admin</option>
             </select>
           </div><br>
-          
-          
-          
           <button class=" myButton" name="submit" type="submit">Registration</button> 
-        
         </form>
     </center>  
       </div>
-
       <script type="text/javascript" src="./assets/donor/js/registration.js"></script>
 </body>
 </html>
