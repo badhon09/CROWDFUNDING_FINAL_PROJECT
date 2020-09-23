@@ -13,6 +13,7 @@ $dlist = getAllhistory($a);
 
 $email = $_GET['email'];
 $user = getByEmail($email);
+$time = date('Y-m-d, g:i a');
 ?>
 
 <!DOCTYPE html>
@@ -71,6 +72,26 @@ $user = getByEmail($email);
     </center>
 
 
+    <h1 align="center">Login History</h1>
+
+    <center>
+        <section>
+            <table border="1" width="300px" class="prof_table">
+                <tbody>
+                    <tr>
+                        <td>Date</td>
+                    </tr>
+                    <center>
+                        <tr>
+                            <td><?= $time ?> </td>
+                        </tr>
+                    </center>
+
+                </tbody>
+            </table>
+        </section>
+        <br><br>
+    </center>
 
 
     <h1 align="center">My Donation History</h1>
@@ -100,8 +121,10 @@ $user = getByEmail($email);
             </table>
         </section>
         <br><br>
-
-        <a class="myButton">Delete My Account</a>
+        <!-- <form action="./admin_delete.php" method="POST">
+            <input type="submit" class="myButton" value="Delete My Account">
+        </form> -->
+        <a class="myButton" href="./admin_delete.php?email=<?= $email ?>">Delete My Account</a>
     </center>
 
 

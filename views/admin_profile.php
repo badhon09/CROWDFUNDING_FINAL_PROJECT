@@ -65,7 +65,6 @@ $dlist = getAllhistory($a);
             </table>
         </section><br>
         <a class="myButton" href="./admin_editprofile.php">edit</a>
-        <a class="myButton">Delete My Account</a>
     </center>
 </body>
 

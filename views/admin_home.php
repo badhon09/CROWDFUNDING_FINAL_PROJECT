@@ -65,7 +65,7 @@ $_SESSION['user_id'] = $a;
                         <h4><b><?= $posts[$i]['post_title'] ?></b></h4>
                         <p><?= $posts[$i]['user_name'] ?></p>
                         <a href="./donor_postdetails.php?postid=<?= $posts[$i]['post_id'] ?>" class="myButton">Details</a>
-                        <input type="button" value="Delete" class="myButton">
+                        <a href="./admin_delete.php?post_title=<?= $posts[$i]['post_title'] ?>" class="myButton">Delete</a>
 
                     </div>
 
