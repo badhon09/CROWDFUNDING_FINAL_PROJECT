@@ -214,10 +214,30 @@ button.default-button:hover {
 	text-decoration: none;
     color: white;
 }
-.default-button a {
+button.default-button a {
     text-decoration: none;
     color: #4CAF50;
 }
+
+button.default-button-01 {
+	height: 36px;
+    padding: 10px;
+    border: 1px solid #205377;
+    background: white;
+}
+button.default-button-01 a {
+    text-decoration: none;
+    color: #205377;
+}
+
+button.default-button-02 {
+	margin: 15px;
+	height: 36px;
+    padding: 10px;
+    border: 1px solid #f50c0c;
+    background: white;
+}
+
 .default-field {
     border: 1px solid black;
     height: 23px;
@@ -256,4 +276,107 @@ form.add-form {
 }
 .add-post .error-message, .success-message{
 	margin-left: 40%;
+}
+.home-post {
+    width: 50%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.card-profile {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 5% auto;
+    padding: 4%;
+    text-align: center;
+}
+
+.card-profile button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #4CAF50;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card-profile a {
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+}
+
+.card-profile button:hover {
+  background-color: #5db561;
+}
+
+.sc-container {
+  width: 400px;
+  margin: 0 auto;
+  background: #f0f0f0;
+  padding: 6% 4%;
+}
+
+.sc-container input[type="email"],
+.sc-container input[type="password"],
+.sc-container input[type="file"],
+.sc-container input[type="text"]{
+  width: 70%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 4%;
+  color: black;
+}
+
+.sc-container button {
+  width: 60%;
+  background: #4CAF50;
+  border: 0;
+  padding: 4%;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sc-container button:hover {
+  background: #5db561;
+}
+.card-profile a.link {
+    font-size: 14px;
+    margin: 22px;
+    display: inline;
+    color: #1e5eef;
+    text-decoration: underline;
+}
+
+.postDetails {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: -34px;
+    text-align: center;
+}
+h3.postTile {
+    font-size: 31px;
+    font-weight: 500;
+}
+p.postTime{
+    text-align: initial;
+    font-size: 15px;
+    font-weight: 200;
+}
+p.postDesc {
+    text-align: initial;
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: lighter;
+}
+p.postAmount {
+    text-align: end;
+    font-size: 20px;
+    font-weight: 200;
+    color: #4CAF50;
 }

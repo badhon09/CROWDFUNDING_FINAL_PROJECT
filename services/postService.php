@@ -49,7 +49,26 @@ require_once('../db/db.php');
 			return false;
 		}
 	}
-    
 
+	function getPostsById($id){
+		$con = dbConnection();
+		$sql = "select * from posts where user_id = '{$id}'";
+		$result = mysqli_query($con, $sql);
+		$posts =[];
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($posts, $row);
+		};
+		return $posts;
+		
+    }
+    function updatePostByRaiser($post){
+		$con = dbConnection();
+		$sql = "update posts set post_title='{$post['title']}',post_details='{$post['description']}',post_amount='{$post['amount']}',post_pic='{$post['photo']}' where post_id={$post['id']}";
 
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
     ?>
