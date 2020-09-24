@@ -5,14 +5,15 @@ require_once('../services/userService.php');
 require_once('../services/paymentService.php');
 require_once('../php/cookieController.php');
 
-$email = $_SESSION['email'];
-$a = $_SESSION['user_id'];
-
-$user = getByEmail($email);
-$dlist = getAllhistory($a);
+//$email = $_SESSION['email'];
+//$a = $_SESSION['user_id'];
+//$user = getByEmail($email);
+//$dlist = getAllhistory($a);
 
 $email = $_GET['email'];
 $user = getByEmail($email);
+$id = $user['user_id'];
+$dlist = getAllhistory($id);
 $time = date('Y-m-d, g:i a');
 ?>
 
@@ -121,9 +122,7 @@ $time = date('Y-m-d, g:i a');
             </table>
         </section>
         <br><br>
-        <!-- <form action="./admin_delete.php" method="POST">
-            <input type="submit" class="myButton" value="Delete My Account">
-        </form> -->
+
         <a class="myButton" href="./admin_delete.php?email=<?= $email ?>">Delete My Account</a>
     </center>
 
