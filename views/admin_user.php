@@ -27,7 +27,7 @@ $user = getAllUser();
                 <li><a href="./admin_home.php">Home </a></li>
                 <li><a href="./admin_profile.php">profile</a></li>
                 <li><a href="./admin_user.php">Users</a></li>
-                <li><a href="./registration.php">Registration</a></li>
+                <li><a href="./registration.php">Add User</a></li>
                 <li><a href="../php/logoutController.php">Logout</a></li>
             </ul>
         </nav>
@@ -36,10 +36,9 @@ $user = getAllUser();
 
     <center>
 
-        <input type="text">
-        <button>serach</button>
+        <input type="text" id="search" onkeyup="search()">
         <br><br>
-        <div id="search"></div>
+        <div id="result"></div>
         <hr>
 
     </center>
@@ -77,6 +76,21 @@ $user = getAllUser();
         <br><br>
     </center>
 
+    <script type="text/javascript">
+        function search() {
+            var search = document.getElementById('search').value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.open('POST', '../php/searchController.php', true);
+            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhttp.send('search=' + search);
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('result').innerHTML = this.responseText;
+
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

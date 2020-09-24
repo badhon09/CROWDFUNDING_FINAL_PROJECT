@@ -29,7 +29,7 @@ $dlist = getAllhistory($a);
                 <li><a href="./admin_home.php">Home </a></li>
                 <li><a href="./admin_profile.php">profile</a></li>
                 <li><a href="./admin_user.php">Users</a></li>
-                <li><a href="./registration.php">Registration</a></li>
+                <li><a href="./registration.php">Add User</a></li>
                 <li><a href="../php/logoutController.php">Logout</a></li>
             </ul>
         </nav>
