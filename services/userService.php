@@ -52,7 +52,6 @@ function create($user)
 		return false;
 	}
 }
-
 function update($user)
 {
 	$con = dbConnection();
@@ -76,3 +75,38 @@ function delete($email)
 		return false;
 	}
 }
+
+	function raiserUpdate($user){
+		$con = dbConnection();
+		$sql = "update users set fullname='{$user['fullname']}',email='{$user['email']}',address='{$user['address']}',contact='{$user['phoneno']}' where user_id={$user['id']}";
+
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function raiserPasswordUpdate($user){
+		$con = dbConnection();
+		$sql = "update users set password='{$user['password']}' where user_id={$user['id']}";
+
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function raiserPicUpdate($user){
+		$con = dbConnection();
+		$sql = "update users set photo='{$user['photo']}' where user_id={$user['id']}";
+
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+?>

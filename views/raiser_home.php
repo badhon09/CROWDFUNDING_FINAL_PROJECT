@@ -1,10 +1,7 @@
 <?php
-/*
   	session_start();
-	echo "username: ". $_SESSION['user']['fullname'];
-	echo "</br>";
-	echo "password: ". $_SESSION['user']['password'];
-*/
+	require_once('../services/postService.php');
+	$posts = getPostsById($_SESSION['user']['user_id']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,23 +25,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<table>
-				<tr>
-					<td></td>
-					<td>
-						<h3>Lorem ipsum dolor sit amet</h3>
-						<p>consectetur adipiscing elit. Morbi tincidunt metus et quam molestie varius. Nulla id malesuada mauris, sit amet facilisis augue. Nullam sodales risus a nisl volutpat, id sagittis tellus maximus. Cras id ligula pellentesque, suscipit tortor eu, dictum quam. Integer vitae purus aliquet, tempor eros ut, cursus ipsum. . .<a href="View Posts.php">View Post</a> </p>
-						<h3>Morbi euismod orci non tincidunt elementum</h3>
-						<p>Sed pretium pellentesque dolor, non efficitur nisl congue nec. Etiam imperdiet quis justo ut pellentesque. Sed mattis ultricies orci vel condimentum. Nulla vulputate ipsum eu justo sodales ornare. Ut blandit sagittis ligula a mollis. Morbi suscipit sem nisl, quis tincidunt odio vehicula eu. Sed eget sapien ex. . . .<a href="View Posts.php">View Post</a> </p>
-						<h3>Lorem ipsum dolor sit amet</h3>
-						<p>consectetur adipiscing elit. Morbi tincidunt metus et quam molestie varius. Nulla id malesuada mauris, sit amet facilisis augue. Nullam sodales risus a nisl volutpat, id sagittis tellus maximus. Cras id ligula pellentesque, suscipit tortor eu, dictum quam. Integer vitae purus aliquet, tempor eros ut, cursus ipsum. . .<a href="View Posts.php">View Post</a> </p>
-						<h3>Mauris at venenatis velit. Quisque id purus</h3>
-						<p>Suspendisse eget congue ante, pretium finibus nulla. Mauris posuere pellentesque condimentum. Fusce sit amet odio mattis, mollis elit eget, iaculis tellus. Aliquam nec nulla semper tortor blandit gravida. Nulla posuere neque vitae orci ullamcorper molestie vel nec mi. Morbi id eros dapibus, vestibulum eros at, maximus justo. . . .<a href="View Posts.php">View Post</a> </p>
-					</td>
-				</tr>
-			</table>
-		</div>
+        <?php for($i=0; $i != count($posts); $i++ ){ ?>
+      		<div class="home-post">
+        		<img width="190px" src="../uploads/<?= $posts[$i]['post_pic'] ?>" alt="Avatar" >
+          		<h4><b><?= $posts[$i]['post_title'] ?></b></h4>
+          		<p><?= substr($posts[$i]['post_details'], 0, 100). "....." ?></p>
+          		<button class="default-button-01"><a href="./raiser_postdetails.php?postid=<?= $posts[$i]['post_id'] ?>" >See in Details</a></button>     
+      		</div>
+        <?php } ?>
 	</div>
 </body>
 </html>
